@@ -1,23 +1,27 @@
 import axios from "axios";
-import { config } from "localforage";
 import { getToken } from "../auth";
 
+export const Base_Url = 'http://3.88.152.181:8081'; // Updated backend IP and port
 
-export const Base_Url = 'http://52.66.193.48:9092';
 export const myAxios = axios.create({
-    baseURL: Base_Url // Corrected from baseUrl to baseURL
+  baseURL: Base_Url
 });
 
 export const privateAxios = axios.create({
-    baseURL: Base_Url // Corrected from baseUrl to baseURL
+  baseURL: Base_Url
 });
 
-privateAxios.interceptors.request.use(config=>{
-    const token=getToken();
-    console.log(token)
-    if(token){
-        config.headers.Authorization=`Bearer ${token}`
-        return config;
+// Attach token to privateAxios requests
+privateAxios.interceptors.request.use(
+  (config) => {
+    const token = getToken();
+    console.log("Token:", token);
+
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
     }
-    
-},error=>Promise.reject(error))
+    return config; // Always return config
+  },
+  (error) => Promise.reject(error)
+);
+
