@@ -16,9 +16,9 @@ RUN npm install -g serve
 # Build the app
 RUN npm run build
 
-# Expose port 9091
-EXPOSE 9091
+# Expose port 3000
+EXPOSE 3000
 
 # Run the app using 'serve'
-CMD ["serve", "-s", "build", "-l", "9091"]
+CMD ["serve", "-s", "build", "-l", "3000"]
 
