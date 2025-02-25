@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getToken } from "../auth";
 
-export const Base_Url = 'http://23.22.237.221:8081'; // Updated backend IP and port
+export const Base_Url = 'http://18.208.211.74:8081'; // Updated backend IP and port
 
 export const myAxios = axios.create({
   baseURL: Base_Url
