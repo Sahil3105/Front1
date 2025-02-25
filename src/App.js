@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     // Corrected URL with proper colon before the port number
-    fetch('http://54.242.118.39:8081/api/ping')
+    fetch('http://23.22.237.221:8081/api/ping')
       .then(response => response.text())
       .then(data => setBackendResponse(data))
       .catch(error => console.error('Error connecting to backend:', error));
