@@ -5,7 +5,7 @@ const AboutUs=()=>{
 
         <div>
             <h1>Aditya</h1>
-            <h1> Wadekar</h1>
+            <h1> Akash</h1>
         </div>
 
         
